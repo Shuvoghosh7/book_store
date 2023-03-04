@@ -11,11 +11,12 @@ const reducer = (state = initialState, action) => {
         case LOADED:
             return action.payload;
         case ADDED:
-            return{
+            return[
                 ...state,
-                books:[...state.books,action.payload]
-            }
- 
+                {
+                    ...action.payload
+                }
+            ]
         default:
             return state
     }

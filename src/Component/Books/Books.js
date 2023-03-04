@@ -1,8 +1,14 @@
-import React from 'react';
+import { useEffect } from "react";
 import AddBooks from '../AddBooks/AddBooks';
+import { useDispatch, useSelector } from "react-redux";
 import BookCard from './BookCard';
+import fetchTodos from "../../redux/books/thunk/fetchTodos";
 
 const Books = () => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchTodos);
+    }, [dispatch]);
     return (
         <div>
             <main class="py-12 2xl:px-6">

@@ -1,5 +1,3 @@
-const initialState ={
-    books:[]
-};
+const initialState =[];
 
 export default initialState;

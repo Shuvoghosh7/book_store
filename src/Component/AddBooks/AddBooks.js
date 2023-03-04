@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from 'react';
 import { useDispatch } from "react-redux";
+import addBooks from "../../redux/books/thunk/addBooks";
 import { added } from "../../redux/books/actionCreator";
 const AddBooks = () => {
     const [isChecked, setIsChecked] = useState(false);
@@ -19,7 +20,7 @@ const AddBooks = () => {
         const booksInput={
             name,author,thumbnail,price,rating,featured
         }
-        dispatch(added(booksInput))
+        dispatch(addBooks(booksInput))
     }
     return (
         <div>

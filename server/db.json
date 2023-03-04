@@ -26,6 +26,15 @@
       "rating": 4,
       "featured": true,
       "id": 4
+    },
+    {
+      "name": "b",
+      "author": "b",
+      "thumbnail": "b",
+      "price": "122",
+      "rating": "1",
+      "featured": "false",
+      "id": 5
     }
   ]
 }
