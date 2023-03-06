@@ -45,9 +45,7 @@ const Books = () => {
                         <div className="lws-bookContainer">
                             {/* <!-- Card 1 --> */}
                             {
-                                books
-                                    .filter(filterByStatuss)
-                                    .map(book => <BookCard book={book} key={book.id} />)
+                                books?.filter(filterByStatuss)?.map(book => <BookCard book={book} key={book.id} />)
                             }
 
                         </div>

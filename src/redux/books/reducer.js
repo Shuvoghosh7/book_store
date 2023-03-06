@@ -1,4 +1,4 @@
-import { ADDED, LOADED } from "./actionType";
+import { ADDED, EDITED, LOADED } from "./actionType";
 import initialState from "./initialState";
 
 const nextTodoId = (books) => {
@@ -11,12 +11,23 @@ const reducer = (state = initialState, action) => {
         case LOADED:
             return action.payload;
         case ADDED:
-            return[
+            return [
                 ...state,
                 {
                     ...action.payload
                 }
             ]
+        case EDITED:
+            const { id, newText } = action.payload;
+            return state.map((todo) => {
+                if (todo.id !== id) {
+                    return todo;
+                }
+                return {
+                    ...todo,
+                    newText,
+                };
+            });
         default:
             return state
     }
